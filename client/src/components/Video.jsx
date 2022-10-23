@@ -110,7 +110,7 @@ function Video() {
         
     }
 
-    
+    // Fetch Video when component is mounted
     useEffect(() => {
         const fetchVideo = async () => {
             const res = await publicRequest.get(`/video/find/${link}`)

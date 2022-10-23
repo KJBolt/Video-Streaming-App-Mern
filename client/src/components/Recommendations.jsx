@@ -8,6 +8,7 @@ function Recommendations({category}) {
     const [relatedVideos, setRelatedVideos] = useState([])
     const navigate = useNavigate();
 
+    // Fetch Related Videos
     useEffect(() => {
         const fetchRelatedVideos = async() => {
             const res = await publicRequest.get(`/video/category?category=${category}`);

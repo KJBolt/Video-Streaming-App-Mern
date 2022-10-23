@@ -14,6 +14,7 @@ function Subscription() {
     const [loading, setLoading] = useState(false);
     const [subscribedChannels, setSubscribedChannels] = useState([]);
 
+    // Fetch Subscribed channel videos
     useEffect(() => {
         const fetchChannels = async () => {
             setLoading(true)

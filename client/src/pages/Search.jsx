@@ -13,6 +13,7 @@ function Search() {
     const [searchedVideos, setSearchedVideos] = useState([]);
     const query = location.pathname.split('/')[2];
 
+    // Fetch Search results
     useEffect(() => {
         if (query) {
           const fetchResults = async() => {

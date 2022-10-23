@@ -26,16 +26,19 @@ function UploadVideoContent() {
     const [category, setCategory] = useState('')
     const navigate = useNavigate()
 
+    // Set the input values
     const handleChange = (e) => {
         setInputs((prev) => {
             return {...prev, [e.target.name]: e.target.value}
         });
     };
 
+    // Handles fetching category videos
     const handleCategory = (event) => {
         setCategory(event.target.value);
     };
 
+    // Upload file logic
     const uploadFile = (file, urlType) => {
         const storage = getStorage(app);
         const fileName = new Date().getTime() + file.name;
@@ -43,7 +46,6 @@ function UploadVideoContent() {
         const uploadTask = uploadBytesResumable(storageRef, file);
         
     
-
         uploadTask.on('state_changed', 
         (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -81,7 +83,7 @@ function UploadVideoContent() {
     }, [image]);
 
 
-    
+    // Save Inputs in database and navigate to video page when successful
     const handleUpload = async (e) => {
         e.preventDefault();
         const res = await userRequest.post('/video', {title:inputs.title, desc:inputs.desc, category:category, imgUrl:inputs.imageUrl, videoUrl:inputs.videoUrl});

@@ -19,6 +19,7 @@ function Comments({videoId}) {
   const user = useSelector((state) => state.user.currentUser)
   
 
+  // Fetch Comments
   useEffect(() => {
     const fetchComments = async () => {
       setLoading(true);

@@ -14,6 +14,7 @@ function Explore() {
   const [loading, setLoading] = useState(false);
   const [trending, setTrending] = useState([]);
 
+  // Fetch Trending Videos
   useEffect(() => {
     const fetchTrending = async () => {
       try {
@@ -23,8 +24,7 @@ function Explore() {
         setLoading(false)
       } catch (error) {
         console.log(error.message)
-      }
-        
+      }  
     }
 
     fetchTrending()

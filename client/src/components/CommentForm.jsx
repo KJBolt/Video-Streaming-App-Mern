@@ -1,6 +1,6 @@
 import { Box, OutlinedInput, Button } from '@mui/material'
 import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useSelector} from 'react-redux';
 
 
 // Dialog Imports
@@ -11,9 +11,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-
-
-
 
 
 function CommentForm({handleSubmit, submitLabel, handleCancel, initialText=''}) {
@@ -35,8 +32,7 @@ function CommentForm({handleSubmit, submitLabel, handleCancel, initialText=''}) 
     setOpen(false);
   };
 
-
-
+  // Submit Inputs
   const onSubmit = () => {
     handleSubmit(input)
     setInput('')

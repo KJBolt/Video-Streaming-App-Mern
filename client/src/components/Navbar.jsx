@@ -14,7 +14,6 @@ import {publicRequest} from '../requestMethods';
 import {useDispatch, useSelector} from 'react-redux';
 import Tooltip from '@mui/material/Tooltip';
 import {login, logout} from '../redux/userSlice';
-import { search } from '../redux/videoSlice';
 
 function Navbar() {
     const dispatch = useDispatch();
@@ -44,10 +43,6 @@ function Navbar() {
         });
     }
 
-
-
-     
-
     // Sign Out
     const handleSignOut = () => {
         signOut(auth).then(() => {
@@ -58,7 +53,7 @@ function Navbar() {
     }
     
     
-
+    // Navigate to search page with search value
     const handleQuery = () => {
         navigate(`/search/${query}`)
     }

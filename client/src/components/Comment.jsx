@@ -42,14 +42,14 @@ function Comment({comment, commentId, handleDelete, replyResponse, activeComment
         setOpen(false);
     };
 
-  
-
+    // If comment id is equal to user id the we can edit comment
     useEffect(() => {
         if (user && user._id === comment.userId) {
             setCanModify(true)
         }
     }, [comment.userId, user])
 
+    // Fetch Replies when component is mounted
     useEffect(() => {
         const fetchReplies = async () => {
             const res = await publicRequest.get(`/comments/reply/${commentId}`)
